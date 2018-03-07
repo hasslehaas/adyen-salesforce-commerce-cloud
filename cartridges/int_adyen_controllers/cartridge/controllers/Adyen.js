@@ -199,6 +199,42 @@ function getPaymentMethodsJSON() {
 }
 
 /**
+ * Get configured terminals  
+ * todobas get actually configured terminals from custom preferences
+ */
+function getTerminals() {
+	var terminals = { "terminals" : 
+		[{
+   				"name" : "terminal1", 
+   				"description" : "terminal one",
+   				"storeId" : 1 
+   			}, 
+   			{
+   				"name" : "terminal2", 
+   				"description" : "terminal two",
+   				"storeId" : 2 
+   			},
+   			{
+   				"name" : "terminal3", 
+   				"description" : "terminal three",
+   				"storeId" : 2 
+   			},
+   			{
+   				"name" : "terminal4", 
+   				"description" : "terminal four",
+   				"storeId" : 1 
+   			},
+   			{
+   				"name" : "terminal5", 
+   				"description" : "terminal five",
+   				"storeId" : 1 
+   			}]
+   	}
+   	
+   	return terminals;
+}
+
+/**
  * Get orderdata for the Afterpay Payment method
  */
 function afterpay() {
@@ -460,6 +496,8 @@ exports.ShowConfirmation = guard.httpsGet(showConfirmation);
 exports.GetPaymentMethods = getPaymentMethods;
 
 exports.GetPaymentMethodsJSON = guard.ensure(['get'], getPaymentMethodsJSON);
+
+exports.GetTerminals = getTerminals;
 
 exports.RefusedPayment = refusedPayment;
 
